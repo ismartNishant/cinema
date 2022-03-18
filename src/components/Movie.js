@@ -57,33 +57,30 @@ export const Movie = (props) => {
                 <div className='movie-img'>
                    <img src="/img/l10.jpg" alt='..' />
                 </div>
-                <h4> Bang Bang</h4>
-                <p>kcfwif dhfgirguriff dkfhrgierkvdr kiugfr</p>
-                <p>dkhcdfivkbdkf</p>
-            </div>
-            <div className='inner-movie mx-2'>
+                <h4 className='pt-2'> Bang Bang</h4>
+                <p>This is a ritik roshan movie oand cat bang bang</p>
+                <p>Genres:- dkhcdfivkbdkf</p>
+            </div> <div className='inner-movie mx-2'>
                 <div className='movie-img'>
                    <img src="/img/l10.jpg" alt='..' />
                 </div>
-                <h4> Bang Bang</h4>
-                <p>kcfwif dhfgirguriff dkfhrgierkvdr kiugfr</p>
-                <p>dkhcdfivkbdkf</p>
-            </div>
-            <div className='inner-movie mx-2'>
+                <h4 className='pt-2'> Bang Bang</h4>
+                <p>This is a ritik roshan movie oand cat bang bang</p>
+                <p>Genres:- dkhcdfivkbdkf</p>
+            </div> <div className='inner-movie mx-2'>
                 <div className='movie-img'>
                    <img src="/img/l10.jpg" alt='..' />
                 </div>
-                <h4> Bang Bang</h4>
-                <p>kcfwif dhfgirguriff dkfhrgierkvdr kiugfr</p>
-                <p>dkhcdfivkbdkf</p>
-            </div>
-            <div className='inner-movie mx-2'>
+                <h4 className='pt-2'> Bang Bang</h4>
+                <p>This is a ritik roshan movie oand cat bang bang</p>
+                <p>Genres:- dkhcdfivkbdkf</p>
+            </div> <div className='inner-movie mx-2'>
                 <div className='movie-img'>
                    <img src="/img/l10.jpg" alt='..' />
                 </div>
-                <h4> Bang Bang</h4>
-                <p>kcfwif dhfgirguriff dkfhrgierkvdr kiugfr</p>
-                <p>dkhcdfivkbdkf</p>
+                <h4 className='pt-2'> Bang Bang</h4>
+                <p>This is a ritik roshan movie oand cat bang bang</p>
+                <p>Genres:- dkhcdfivkbdkf</p>
             </div>
             
         </div>
