@@ -1,7 +1,8 @@
 import React, { useState, createContext } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { Movie } from "./Movie";
-
 
 var newToken = createContext();
 
@@ -9,7 +10,6 @@ const Login = () => {
     const [name, setName] = useState("");
     const [pswd, setPswd] = useState("");
 
-    
 
     const handleOnChange = (event) => {
         setName(event.target.value);
@@ -47,7 +47,7 @@ const Login = () => {
 
   const getToken = () =>{
      newToken = localStorage.getItem('token');
-    console.log(newToken+"from get token")
+     console.log(newToken+"from get token")
     return  newToken
   }
    
