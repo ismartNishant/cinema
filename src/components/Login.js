@@ -1,16 +1,24 @@
 import React, { useState, createContext } from "react";
-import { useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
-import { Movie } from "./Movie";
 
 var newToken = createContext();
 
 const Login = () => {
     const [name, setName] = useState("");
     const [pswd, setPswd] = useState("");
+    const[darkMode, setDarkMode] = useState("light");
+    const MyMode = () =>{
+        if(darkMode ==="light"){
+            document.body.style.backgroundColor = "#fff"
+            setDarkMode("dark")
+        }
+        else{
+            document.body.style.borderColor = "#000";
+            setDarkMode("light")
+        }
+    }
 
-
+    
     const handleOnChange = (event) => {
         setName(event.target.value);
     };
@@ -52,7 +60,7 @@ const Login = () => {
   }
    
     return (
-        <div className="main-login">
+        <div className={darkMode ? "dark-mode mode  main-login" : "light-mode mode main-login"}>
             <div className="login">
                  <form>
                     <label className="login-label" htmlFor="chk" aria-hidden="true">
@@ -72,6 +80,21 @@ const Login = () => {
                         <Link onClick={handleLogin} to="/movie">login</Link>
                     </button>
                 </form> 
+                <div className={darkMode ? "dark-mode mode" : "light-mode mode"}>
+                      <div className="container">
+                           <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
+                           <div className="switch-checkbox">
+                                <label className="switch">
+                                    <input type="checkbox" onChange={MyMode} />
+                                    <span className="slider round"> </span>
+                                </label>
+                           </div>
+                           <span style={{ color: darkMode ? "#c96dfd" : "grey" }}>☽</span>
+                       </div>
+                       <div>
+                            <h6>{darkMode ? "Dark" : "Light"} Mode </h6>
+                       </div>
+                </div>
             </div>
         </div>
     );
