@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Aladin&family=Kaushan+Script&family=Merienda:wght@400;700&family=Mitr:wght@300;400&family=Mochiy+Pop+P+One&family=Monoton&family=Mukta:wght@400;500&family=Nunito+Sans:wght@400;600&family=Nunito:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&family=Tourney:wght@200;300;400;500;600;700;800&family=Varela+Round&display=swap");
+/* font-family: 'Aladin', cursive;
+font-family: 'Kaushan Script', cursive;
+font-family: 'Merienda', cursive;
+font-family: 'Mitr', sans-serif;
+font-family: 'Mochiy Pop P One', sans-serif;
+font-family: 'Monoton', cursive;
+font-family: 'Mukta', sans-serif;
+font-family: 'Nunito', sans-serif;
+font-family: 'Nunito Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Tourney', cursive;
+font-family: 'Varela Round', sans-serif; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --bgcolor: #000000;
+  --bgcolor2: #fff;
+  --seccolor: #5a5c5b;
+  --maincolor: #870cb8;
+  --special: rgba(198, 12, 245, 0.479);
+  --third: #e23b64;
+  --body-bg: #181616;
+  --box-bg: #221f1f;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  padding: 0;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.main-login {
+  width: 25rem;
+  margin: 2rem auto;
+  height: 35em;
+  overflow: hidden;
+  background: url("/public/img/l10.jpg") no-repeat center / cover;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.726);
+}
+.login {
+  background: #0000009c;
+  padding: 2rem 0rem;
+}
+.login-label {
+  color: #fff;
+  font-size: 2.7rem;
+  font-family: "Aladin";
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  letter-spacing: 2px;
+  margin: 60px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.login input {
+  width: 60%;
+  height: 20px;
+  background: transparent;
+  justify-content: center;
+  display: flex;
+  color: #fff;
+  margin: 30px auto;
+  padding: 20px 15px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 5px;
+  border: 2px solid rgb(245, 244, 244);
+}
+::placeholder {
+  color: #ffffff;
+  font-size: 0.8em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.login button {
+  margin: 10px auto;
+  margin-top: 40px !important;
+  justify-content: center;
+  display: block;
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  outline: none;
+}
+.login .disabled a{
+  background: #fff !important;
+  color: var(--third);
+}
+.login button a {
+  transition: 0.5s ease-in;
+  border-radius: 20px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-family: "Aladin";
+  padding: 0.3rem 5rem;
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #000 !important;
+  background: #d62c57;
+}
+
+.login button a:hover {
+  background:#fff;
+  color: var(--third) !important;
+}
+
+
+@media (max-width: 1100px) {
+
+  .form-label {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+}
+
+@media (max-width: 800px) {
+  
+}
+
+@media (max-width: 600px) {
+  .main-login {
+    margin: 0;
+    border-radius: 0rem;
+    height: 100vh;
+    width: 100%;
   }
+
+  .form-label {
+    font-size: 1.5rem;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  .form-label {
+    font-size: 1rem;
+  }
+
+  
 }
