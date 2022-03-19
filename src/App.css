@@ -46,7 +46,8 @@ body {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.726);
 }
 .login {
-  background: #0000009c;
+width: 100%;
+height: 100vh;
   padding: 2rem 0rem;
 }
 .login-label {
@@ -63,18 +64,18 @@ body {
 }
 
 .login input {
+  color: #fff;
   width: 60%;
   height: 20px;
-  background: transparent;
+  background: transparent !important;
   justify-content: center;
   display: flex;
-  color: #fff;
   margin: 30px auto;
   padding: 20px 15px;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   border: none;
   border-radius: 5px;
-  border: 2px solid rgb(245, 244, 244);
+  border: 2px solid ;
 }
 ::placeholder {
   color: #ffffff;
@@ -154,21 +155,17 @@ body {
 }
 
 /*-----------mode*/
-.dark-mode {
-  background-color: #1a1919;
-  color: #999;
-  height: 100%;
-  transition: background-color 0.25s ease-in-out;
+
+  .mode {
+    position: absolute;
+    right: 0rem;
+    top:5rem;
+    border: 1px solid #000;
+    border-radius: 27px;
+    z-index: 1;
 }
 
-.light-mode {
-  background-color: #fff;
-  color: #333;
-  height: 100%;
-  transition: background-color 0.25s ease-in-out;
-}
-
-.container {
+ .mode .container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,7 +196,9 @@ body {
   width: 0;
   height: 0;
 }
-
+.theme i{
+  font-size: 2rem;
+}
 .slider {
   position: absolute;
   cursor: pointer;
@@ -224,15 +223,14 @@ body {
   transition: 0.4s;
 }
 
-.mode input:checked + .slider {
+.switch input:checked + .slider {
   background-color: #19a2c1;
 }
-
-.mode input:focus + .slider {
+ .switch input:focus + .slider {
   box-shadow: 0 0 1px #2196f3;
 }
 
-.mode input:checked + .slider:before {
+  .switch input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
@@ -247,7 +245,7 @@ body {
   border-radius: 50%;
 }
 .switch-checkbox {
-  padding: 10px;
+  padding: 5px;
 }
 
 
@@ -283,6 +281,18 @@ body {
   .form-label {
     font-size: 1rem;
   }
+  .mode {
+    position: absolute;
+    right: 0rem;
+    top: 5rem;
+    border: 1px solid #000;
+}
 
-  
+  .login .mybtn {
+    margin: 40px auto;
+    margin-top: 5rem !important;
+}
+form {
+  margin-top: 6rem;
+}
 }

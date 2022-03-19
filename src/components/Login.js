@@ -3,22 +3,12 @@ import { Link } from "react-router-dom";
 
 var newToken = createContext();
 
-const Login = () => {
+const Login = (props) => {
     const [name, setName] = useState("");
     const [pswd, setPswd] = useState("");
-    const[darkMode, setDarkMode] = useState("light");
-    const MyMode = () =>{
-        if(darkMode ==="light"){
-            document.body.style.backgroundColor = "#fff"
-            setDarkMode("dark")
-        }
-        else{
-            document.body.style.borderColor = "#000";
-            setDarkMode("light")
-        }
-    }
 
-    
+
+
     const handleOnChange = (event) => {
         setName(event.target.value);
     };
@@ -26,48 +16,59 @@ const Login = () => {
         setPswd(even.target.value);
     };
 
-   var tok ;
+    var tok;
+    var success;
     const handleLogin = (e) => {
-        fetch(" https://demo.credy.in/api/v1/usermodule/login/", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                username: name,
-                password: pswd
+            fetch(" https://demo.credy.in/api/v1/usermodule/login/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    username: name,
+                    password: pswd
+                })
             })
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result.data.token);
-                var success = result.is_success;
-                tok = result.data.token;
-                if(success){
-                    localStorage.setItem('token', tok);
-                    getToken();
-                }
-                else{
-                }
-                console.log(tok);
-                console.log(success)
-                
-            });
+                .then(res => res.json())
+                .then(result => {
+                    console.log(result.data.token);
+                    success = result.is_success;
+                    tok = result.data.token;
+                    if (success) {
+                        localStorage.setItem('token', tok);
+                        getToken();
+                    }
+                    else {
+                        alert("P;ease provide right");
+                    }
+                    console.log(tok);
+                    console.log(success)
+    
+                });
+            //    var logBtn = document.getElementById('logBtn');
+            //    $("input").onChange();
+
+       
     };
 
-  const getToken = () =>{
-     newToken = localStorage.getItem('token');
-     console.log(newToken+"from get token")
-    return  newToken
-  }
-   
+
+    const getToken = () => {
+        newToken = localStorage.getItem('token');
+        console.log(newToken + "from get token")
+        return newToken
+    }
+
+     let forbg =  props.mode ? "#0000008a" :"#ffffff21";
+     let forColor =  props.mode ? "#000":"#fff";
+     let forShad = props.mode ? "0px 0px 10px #fff" : "0px 0px 10px #000";
+
     return (
-        <div className={darkMode ? "dark-mode mode  main-login" : "light-mode mode main-login"}>
-            <div className="login">
-                 <form>
+        <div className="main-login" >
+            <div className="login" style={{background : forbg}}>
+                <form>
                     <label className="login-label" htmlFor="chk" aria-hidden="true">
                         Login
                     </label>
-                    <input type="text" name="txt"  placeholder="User Name"  value={name} onChange={handleOnChange} required />
-                    <input
+                    <input type="text" name="txt" placeholder="User Name" value={name} onChange={handleOnChange} required style={{borderColor : forColor, boxShadow: forShad}} />
+                    <input style={{borderColor : forColor , boxShadow: forShad}}
                         type="text"
                         name="pswd"
                         placeholder="Password"
@@ -76,25 +77,11 @@ const Login = () => {
                         required
                     />
 
-                    <button className={`${name.length ===0 & pswd.length ===0 ? "btn disabled mybtn":"mybtn"}`}  >
+                    <button id="logBtn" className={`${name.length === 0 & pswd.length === 0 ? "btn disabled mybtn" : "mybtn"}`}  >
                         <Link onClick={handleLogin} to="/movie">login</Link>
                     </button>
-                </form> 
-                <div className={darkMode ? "dark-mode mode" : "light-mode mode"}>
-                      <div className="container">
-                           <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
-                           <div className="switch-checkbox">
-                                <label className="switch">
-                                    <input type="checkbox" onChange={MyMode} />
-                                    <span className="slider round"> </span>
-                                </label>
-                           </div>
-                           <span style={{ color: darkMode ? "#c96dfd" : "grey" }}>☽</span>
-                       </div>
-                       <div>
-                            <h6>{darkMode ? "Dark" : "Light"} Mode </h6>
-                       </div>
-                </div>
+                </form>
+               
             </div>
         </div>
     );
@@ -102,4 +89,4 @@ const Login = () => {
 
 export default Login;
 
-export {newToken}
+export { newToken }
