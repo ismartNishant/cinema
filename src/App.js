@@ -2,6 +2,7 @@ import './App.css';
 import React, {useState} from "react";
 import Login from './components/Login';
 import { Movie } from './components/Movie';
+import Unauth from './components/Unauth';
 
 import {
   BrowserRouter as Router,
@@ -33,6 +34,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Login mode ={darkMode} />} />
           <Route path="/movie"  element={<Movie mode ={darkMode} />} />
+          <Route path="/uauth"  element={<Unauth mode ={darkMode} />} />
         </Routes>
       </div>
     </Router>

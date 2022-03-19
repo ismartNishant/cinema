@@ -125,20 +125,20 @@ height: 100vh;
 }
 .movie-box{
  display: flex;
+ gap: 1rem;
  flex-wrap: wrap;
  justify-content: center;
- padding: 8rem 1rem 1rem 1rem;
+ padding: 8rem .5rem 1rem .5rem;
 }
 .inner-movie{
   border-radius: 15px;
-  width: 18rem;
-  padding: 1rem;
+  width: 17rem;
+  padding: .5rem;
   border: 2px solid #000;
 }
 
 .movie-img{
   overflow: hidden;
-  border-radius: 50%;
   width: 12rem;
   height: 12rem;
   object-fit: cover;
@@ -248,8 +248,13 @@ height: 100vh;
   padding: 5px;
 }
 
-
-
+/*-------------unauth ------------------*/
+.inner-auth{
+ margin: 5rem auto;
+}
+.box-auth{
+  text-align: center;
+}
 @media (max-width: 1100px) {
 
   .form-label {

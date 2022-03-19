@@ -7,6 +7,7 @@ var newToken = createContext();
 const Login = (props) => {
     const [name, setName] = useState("");
     const [pswd, setPswd] = useState("");
+    const [UAuth,setUAuth] = useState("/uauth");
 
     const logBtnEnabled = () =>{
        
@@ -54,6 +55,7 @@ const Login = (props) => {
                     $("#logBtn").removeClass("disabled");
                     localStorage.setItem('token', tok);
                     getToken();
+                    setUAuth("/movies")
                 }
                 else {
                     alert("P;ease provide right");
@@ -92,8 +94,9 @@ const Login = (props) => {
                         onChange={handlePswd}
                         required
                     />
-                    <button id="logBtn" className="btn disabled mybtn" >
-                        <Link onClick={handleLogin} to="/movie">login</Link>
+
+                    <button id="logBtn" className="btn disabled mybtn" onClick={handleLogin}>
+                        <Link  to="/movie">login</Link>
                     </button>
                 </form>
             </div>
