@@ -7,27 +7,21 @@ export const Movie = (props) => {
 
     const serachMovie = () => {
         var val = newToken;
-        try {
-            fetch("https://demo.credy.in/api/v1/maya/movies/", {
-                method: "GET",
-    
-                headers: new Headers({
-                    'Authorization': 'Token ' + val,
-                })
+        var movieList  = [];
+        fetch("https://demo.credy.in/api/v1/maya/movies/", {
+            method: "GET",
+
+            headers: new Headers({
+                'Authorization': 'Token ' + val,
             })
-                .then(res => res.json())
-                .then(result => {
-                    console.log(result);
-            
-                });
-            console.log(val + "in movie ");
-
-        } 
-        catch (error) {
-            console.log("some error happens")
-        }
-
-      
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                movieList = result.results
+                console.log(movieList[3]);
+            });
+        console.log(val + "in movie ");
     }
 
       let forbg =  props.mode ? "#fff" :"#000";

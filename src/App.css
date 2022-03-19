@@ -93,8 +93,8 @@ height: 100vh;
   outline: none;
 }
 .login .disabled a{
-  /* background: #fff !important; */
-  /* color: var(--third); */
+  background: #fff !important;
+  color: var(--third);
 }
 .login button a {
   transition: 0.5s ease-in;
