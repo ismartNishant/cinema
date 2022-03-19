@@ -123,31 +123,55 @@ height: 100vh;
 .search-btn button{
   text-align: center;
 }
-.movie-box{
- display: flex;
- gap: 1rem;
- flex-wrap: wrap;
- justify-content: center;
- padding: 8rem .5rem 1rem .5rem;
-}
+
+
 .inner-movie{
-  border-radius: 15px;
   width: 17rem;
   padding: .5rem;
   border: 2px solid #000;
 }
-
-.movie-img{
-  overflow: hidden;
-  width: 12rem;
-  height: 12rem;
-  object-fit: cover;
-  margin: 0 auto;
+.in-box-1{
+ padding: 8rem .5rem 1rem .5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.inner-movie  .movie-img  img{
-  object-fit: cover;
-  width: 12rem;
-  height: 12rem;
+.card{
+  background-color: transparent;
+}
+.cards {
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+.front, .back {
+  backface-visibility: hidden;
+}
+
+.back {
+position: absolute;
+bottom: 0rem;
+transform: rotateY(180deg);
+}
+.card-title,
+.card-footer small span{
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: bolder;
+}
+.card-text{
+  font-family: 'Nunito Sans', sans-serif;
+  
+}
+.card-title span{
+  color: #d62c57;
+}
+.card-text span{
+  font-weight: bolder;
+  color: #870cb8;
+}
+.card-footer small span{
+  color:#19a2c1;
 }
 .inner-movie h4{
   font-weight: bold;

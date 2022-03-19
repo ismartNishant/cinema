@@ -39,6 +39,18 @@ export const Movie = (props) => {
     let forColor = props.mode ? "#000" : "#fff";
     let forShad = props.mode ? "0px 0px 10px #f7f1f19e" : "0px 0px 10px #0000009e";
 
+    var element;
+    function flip(event){
+        element = event.currentTarget;
+        if (element.className === "cards") {
+        if(element.style.transform == "rotateY(180deg)") {
+          element.style.transform = "rotateY(0deg)";
+        }
+        else {
+          element.style.transform = "rotateY(180deg)";
+        }
+      }
+    };
 
     return (
         <div className='movie'>
@@ -62,19 +74,49 @@ export const Movie = (props) => {
             <div className='search-btn'>
                 <button className='btn btn-outline-danger' onClick={serachMovie}>Click Me</button>
             </div>
-            <div className='movie-box'>
+            <div className='in-box-1'>
                 {mList.map((element) => {
                     return (
-                            <div className='inner-movie' key={element.uuid} style={{ borderColor: forbg, boxShadow: forShad, color: forbg }}>
-                                <div className=""  >
-                                    <div className='movie-img'>
-                                        <img src={`https://ui-avatars.com/api/?rounde=true&background=random&name=${element.title}`} alt='..' />
+
+                        <div class="in-box-2">
+                            <div class="cards"  >
+                                <div class="front">
+                                    <div className='inner-movie h-100 card p-0 m-0' key={element.uuid} style={{ borderColor: forbg, boxShadow: forShad, color: forbg }}>
+                                        <img src={`https://ui-avatars.com/api/?rounded=true&background=random&name=${element.title}`} alt='..' />
+                                        <div className="card-body">
+                                            <h6 className="card-title bold"> <span className='danger'>Title:- </span> {element.title ? element.title.slice(0, 20) : ""}</h6>
+                                            <p className="card-text bold"> <span>Description:-</span>{element.description ? element.description.slice(0, 90) : ""} ...</p>
+                                        </div>
+                                        <div className="card-footer">
+                                            <small className=""> <span>Genres:-</span> {element.genres.length === 0 ? "NA" : element.genres}</small>
+                                        </div>
                                     </div>
-                                    <h5 className='pt-2'>Title:- {element.title}</h5>
-                                    <p>Des:- {element.description ? element.description.slice(0, 90) : ""} ...</p>
-                                    <p>Genres:- {element.genres.length === 0 ? "NA" : element.genres}</p>
+                                </div>
+                                <div class="back">
+                                    <div className='inner-movie h-100 card p-0 m-0' key={element.uuid} style={{ borderColor: forbg, boxShadow: forShad, color: forbg }}>
+                                        <img src={`https://ui-avatars.com/api/?background=random&name=${element.title}`} alt='..' />
+                                        <div className="card-body">
+                                            <h6 className="card-title bold"> <span className='danger'>Title:- </span> {element.title ? element.title.slice(0, 20) : ""}</h6>
+                                            <p className="card-text bold"> <span>Description:-</span>{element.description}</p>
+                                        </div>
+                                        <div className="card-footer">
+                                            <small className=""> <span>Genres:-</span> {element.genres.length === 0 ? "NA" : element.genres}</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
+                        // <div className='inner-movie card p-0 m-0' key={element.uuid} style={{ borderColor: forbg, boxShadow: forShad, color: forbg }}>
+                        //     <img src={`https://ui-avatars.com/api/?rounde=true&background=random&name=${element.title}`} alt='..' />
+                        //     <div className="card-body">
+                        //         <h5 className="card-title bold"> <span className='danger'>Title:- </span> {element.title}</h5>
+                        //         <p className="card-text bold"> <span>Description:-</span>{element.description ? element.description.slice(0, 90) : ""} ...</p>
+                        //     </div>
+                        //     <div className="card-footer">
+                        //         <small className=""> <span>Genres:-</span> {element.genres.length === 0 ? "NA" : element.genres}</small>
+                        //     </div>
+                        // </div>
                     );
                 })}
             </div>
