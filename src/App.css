@@ -117,6 +117,20 @@ height: 100vh;
 
 
 /*---------movie section ----------------*/
+#ref,
+#movie-btn{
+  visibility: hidden;
+}
+.main-search{
+  text-align: center !important;
+  margin-top: 8rem;
+  justify-content: center;
+}
+.main-search button{
+  padding: 2rem 5rem;
+  font-size: 2rem !important;
+}
+
 .movie-btn{
   display: flex;
   margin: 0 auto;
@@ -186,16 +200,15 @@ transform: rotateY(180deg);
   font-family: 'Nunito Sans', sans-serif;
   
 }
-.card-title span{
+.card-title span,
+.card-footer small span{
   color: #d62c57;
 }
 .card-text span{
   font-weight: bolder;
-  color: #870cb8;
+  color: var(--third);
 }
-.card-footer small span{
-  color:#19a2c1;
-}
+
 .inner-movie h4{
   font-weight: bold;
   font-family: 'Nunito', sans-serif;

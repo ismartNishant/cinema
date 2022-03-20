@@ -17,6 +17,7 @@ const App = () => {
 
 
   return (
+    
     <Router>
       <div className={darkMode ? "App" : "App"} >
                  <div className="mode" style={{ borderColor: darkMode ? "#fff" : "#000", boxShadow: darkMode ? "0px 0px 10px #fff" : "0px 0px 10px #000" , backgroundColor:darkMode ? "#fff" : "#000", }}>
@@ -34,7 +35,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Login mode ={darkMode} />} />
           <Route path="/movie"  element={<Movie mode ={darkMode} />} />
-          <Route path="/uauth"  element={<Unauth mode ={darkMode} />} />
+         
         </Routes>
       </div>
     </Router>
