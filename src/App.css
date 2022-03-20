@@ -161,7 +161,7 @@ body {
   position: absolute;
   visibility: hidden;
   color: var(--third);
-  top: 6rem;
+  top: 7rem;
   font-family: "Aladin";
 }
 
@@ -172,7 +172,8 @@ body {
 
 .main-search {
   text-align: center !important;
-  margin-top: 8rem;
+  position: relative;
+  top:20rem;
   justify-content: center;
 }
 
@@ -186,7 +187,7 @@ body {
   margin: 0 auto;
   position: fixed;
   z-index: 1;
-  top: 5rem;
+  top: 6rem;
   width: 100%;
   padding: 0rem 3rem;
   justify-content: space-between;
@@ -226,7 +227,7 @@ body {
 }
 
 .in-box-1 {
-  padding: 2rem .5rem 1rem .5rem;
+  padding: 11rem .5rem 1rem .5rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -386,6 +387,9 @@ body {
 }
 
 @media (max-width: 600px) {
+  .my-movie-list {
+    top: 8rem;
+}
   .inner-movie {
     width: 15rem;
   }
@@ -405,6 +409,7 @@ body {
 
   .movie-btn {
     padding: 0rem .5rem;
+    top: 5rem;
     position: fixed;
   }
 
@@ -453,6 +458,10 @@ body {
 }
 
 @media (max-width: 450px) {
+  .main-search button {
+    padding: 2rem 3rem;
+    font-size: 2rem !important;
+}
 
   .form-label {
     font-size: 1rem;
