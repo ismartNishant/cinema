@@ -14,7 +14,7 @@ export const Movie = (props) => {
     const serachMovie = async () => {
         var val = newToken;
         $("#ref2").hide();
-        $("#movie-btn").css({"visibility":"visible"});
+        $("#movie-btn , .my-movie-list").css({"visibility":"visible"});
         try {
             let data = await fetch(`https://demo.credy.in/api/v1/maya/movies/?page=${page}`, {
                 method: "GET",
@@ -112,6 +112,7 @@ export const Movie = (props) => {
                 <button id="ref2" className='btn btn-outline-danger' onClick={serachMovie}>Search-Movie</button>
             </div>
             <div className='in-box-1'>
+                <h1 className='my-movie-list'> Movie List</h1>
                 {mList.map((element) => {
                     return (
                         <div className="in-box-2">

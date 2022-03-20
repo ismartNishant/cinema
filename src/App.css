@@ -136,6 +136,12 @@ body {
 /*-----------------------------
       movie section 
 -------------------------------*/
+.my-movie-list{
+  position: absolute;
+  visibility: hidden;
+  top: 6rem;
+  font-family: "Aladin";
+}
 #ref,
 #movie-btn {
   visibility: hidden;
