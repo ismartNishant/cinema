@@ -87,16 +87,16 @@ height: 100vh;
   margin-top: 40px !important;
   justify-content: center;
   display: block;
-  background: transparent;
   border: none;
+  background: var(--third);
   font-weight: bold;
   outline: none;
 }
-.login .disabled a{
-  background: #fff !important;
+.login .disabled {
   color: var(--third);
+  background: #fff;
 }
-.login button a {
+.login button {
   transition: 0.5s ease-in;
   border-radius: 20px;
   letter-spacing: 2px;
@@ -105,19 +105,42 @@ height: 100vh;
   padding: 0.3rem 5rem;
   text-decoration: none;
   font-size: 1.8rem;
-  color: #000 !important;
-  background: #d62c57;
+  background:var(--third);
+  color: #fff;
+  
 }
 
-.login button a:hover {
+.login button:hover {
   background:#fff;
-  color: var(--third) !important;
+  color: #000 !important;
 }
 
 
 /*---------movie section ----------------*/
-.search-btn{
+.movie-btn{
+  display: flex;
   margin: 0 auto;
+  position: fixed;
+  z-index: 1;
+  top:5rem;
+  width: 100%;
+  padding: 0rem 3rem;
+  justify-content: space-between;
+}
+.movie-btn i{
+  font-size: 2rem;
+}
+.navbar{
+padding: 0rem 5rem;
+}
+.navbar-brand{
+  font-family: "Aladin";
+font-size: 3.5rem;
+color: var(--third) !important;
+}
+.search-btn{
+  padding: 5rem 0rem 2rem 0rem;
+text-align: center;
   text-align: center;
 }
 .search-btn button{
@@ -181,9 +204,9 @@ transform: rotateY(180deg);
 /*-----------mode*/
 
   .mode {
-    position: absolute;
+    position: fixed;
     right: 0rem;
-    top:5rem;
+    bottom: 5rem;
     border: 1px solid #000;
     border-radius: 27px;
     z-index: 1;
@@ -292,6 +315,17 @@ transform: rotateY(180deg);
 }
 
 @media (max-width: 600px) {
+  .movie-btn {
+    padding: 0rem .5rem;
+    position: fixed;
+    top: 90%;
+}
+  .navbar{
+    padding: .5rem 1rem;
+    }
+    .navbar-brand{
+    font-size: 2rem;
+    }
   .main-login {
     margin: 0;
     border-radius: 0rem;
@@ -302,6 +336,23 @@ transform: rotateY(180deg);
   .form-label {
     font-size: 1.5rem;
   }
+  .theme i {
+    font-size: 1.5rem;
+  }
+  .switch-checkbox {
+    padding: 3px;
+  }
+  .slider:before {
+  
+    height: 20px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+}
+.switch {
+  width: 55px;
+  height: 28px;
+}
 
 }
 
@@ -311,9 +362,7 @@ transform: rotateY(180deg);
     font-size: 1rem;
   }
   .mode {
-    position: absolute;
     right: 0rem;
-    top: 5rem;
     border: 1px solid #000;
 }
 
