@@ -94,6 +94,7 @@ export const Movie = (props) => {
     let forbg = props.mode ? "#fff" : "#000";
     let forColor = props.mode ? "dark" : "light";
     let forShad = props.mode ? "0px 0px 10px #f7f1f19e" : "0px 0px 10px #0000009e";
+    let BgColor = props.mode ? "#4c494987":"transparent";
 
     
 
@@ -127,9 +128,9 @@ export const Movie = (props) => {
                     return (
                         <div className="in-box-2">
                             <div className="cards"   onClick={(e) => {flip(e); }}>
-                                <div className="front">
-                                    <div className='inner-movie h-100 card p-0 m-0' key={element.uuid} style={{ borderColor: forbg, boxShadow: forShad, color: forbg }}>
-                                        <img src={`https://ui-avatars.com/api/?rounded=true&background=caf0f8&color=666&name=${element.title}`} alt='..' />
+                                <div className="front" >
+                                    <div className='inner-movie h-100 card p-0 m-0' key={element.uuid} style={{ borderColor: forbg, boxShadow: forShad, color: forbg ,backgroundColor:BgColor }}>
+                                        <img src={`https://ui-avatars.com/api/?rounded=true&background=c0fdff&color=000&name=${element.title}`} alt='..' />
                                         <div className="card-body">
                                             <h6 className="card-title bold"> <span className='danger'>Title:- </span> {element.title ? element.title.slice(0, 20) : ""}</h6>
                                             <p className="card-text bold"> <span>Description:- </span>{element.description ? element.description.slice(0, 80) : ""} ...</p>
@@ -140,8 +141,8 @@ export const Movie = (props) => {
                                     </div>
                                 </div>
                                 <div className="back">
-                                    <div className='inner-movie h-100 card p-0 m-0' key={element.uuid} style={{ borderColor: forbg, boxShadow: forShad }}>
-                                        <img src={`https://ui-avatars.com/api/?background=d8f3dc&color=666&name=${element.title}`} alt='..' />
+                                    <div className='inner-movie h-100 card p-0 m-0' key={element.uuid} style={{ borderColor: forbg, boxShadow: forShad,backgroundColor:BgColor }}>
+                                        <img src={`https://ui-avatars.com/api/?background=f3c4fb&color=fff&name=${element.title}`} alt='..' />
                                         <div className="card-body" style={{color: forbg}}>
                                             <h6 className="card-title bold"> <span className='danger'>Title:- </span> {element.title ? element.title.slice(0, 20) : ""}</h6>
                                             <p className="card-text bold"> <span>Description:- </span>{element.description}</p>
