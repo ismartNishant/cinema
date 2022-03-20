@@ -7,9 +7,10 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-
+import LoadingBar from 'react-top-loading-bar';
 
 const App = () => {
+  const[progress,setProgress] = useState(0);
   const [darkMode, setDarkMode] = useState(false);
   document.body.style.backgroundColor =  darkMode ? "#000" : "#fff";
 
@@ -17,6 +18,11 @@ const App = () => {
   return (
     
     <Router>
+        <LoadingBar
+            height={3}
+            color='#f11946'
+            progress={progress}
+          />
       <div className={darkMode ? "App" : "App"} >
                  <div className="mode" style={{ borderColor: darkMode ? "#fff" : "#000", boxShadow: darkMode ? "0px 0px 10px #fff" : "0px 0px 10px #000" , backgroundColor:darkMode ? "#fff" : "#000", }}>
                     <div className="container">
@@ -31,8 +37,7 @@ const App = () => {
                     </div>
                 </div>
         <Routes>
-          <Route path="/" element={<Login mode ={darkMode} />} />
-           
+          <Route path="/" element={<Login mode ={darkMode} setProgress={setProgress} />} />
         </Routes>
       </div>
     </Router>

@@ -39,6 +39,7 @@ const Login = (props) => {
 
     //function for user authentication
     const handleLogin = (e) => {
+        props.setProgress(10);
         e.preventDefault();
         $("#logBtn").addClass("disabled");
         fetch(" https://demo.credy.in/api/v1/usermodule/login/", {
@@ -49,17 +50,21 @@ const Login = (props) => {
                 password: pswd
             })
         })
+        
             .then(res => res.json())
             .then(result => {
                 console.log(result.data.token);
                 setSucsess(result.is_success);
                 tok = result.data.token;
                 if (result.is_success) {
+                    props.setProgress(30);
                     $("#logBtn").removeClass("disabled");
                     localStorage.setItem('token', tok);
                     getToken();
+                    props.setProgress(50);
+                    
                 }
-
+                props.setProgress(100);
                 console.log(tok);
                 console.log(success)
             }).catch(error => {
@@ -106,7 +111,7 @@ const Login = (props) => {
     }
     else if (success) {
         return (
-            <Movie mode ={props.mode} />
+            <Movie mode ={props.mode}  />
         );
     }
 };

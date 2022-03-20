@@ -139,6 +139,7 @@ body {
 .my-movie-list{
   position: absolute;
   visibility: hidden;
+  color: var(--third);
   top: 6rem;
   font-family: "Aladin";
 }

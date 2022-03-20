@@ -2,16 +2,18 @@ import React, { useState } from 'react'
 import { newToken } from './Login';
 import $ from 'jquery';
 import ReactDOM from 'react-dom';
-
-
+import LoadingBar from 'react-top-loading-bar';
 
 export const Movie = (props) => {
     const [mList, setMlist] = useState([]);
     const [page, setPage] = useState(1);
+  const[progress,setProgress] = useState(0);
+
 
     
   // function to fetch moovie list
     const serachMovie = async () => {
+        
         var val = newToken;
         $("#ref2").hide();
         $("#movie-btn , .my-movie-list").css({"visibility":"visible"});
@@ -33,13 +35,14 @@ export const Movie = (props) => {
             console.log(val + "in movie ");
         } catch (error) {
             alert("Some internal error, please press ok to continue ");
-            ReactDOM.render(<Movie />, document.getElementById('root'));
+            ReactDOM.render(<Movie  mode ={props.mode} />, document.getElementById('root'));
         }
         
     }
 
     // function for next and previous movie list
     const updateMoviepage = async (pageType) => {
+        setProgress(10)
         var val = newToken;
         var pageNo;
         if (pageType === "next") {
@@ -51,6 +54,7 @@ export const Movie = (props) => {
             pageNo = page - 1;
             setPage(page - 1);
         } 
+        setProgress(30)
         try {
             let data = await fetch(`https://demo.credy.in/api/v1/maya/movies/?page=${pageNo}`, {
                 method: "GET",
@@ -59,15 +63,16 @@ export const Movie = (props) => {
                     'Authorization': 'Token ' + val,
                 })
             })
+            setProgress(50)
             let parsedData = await data.json();
 
             console.log(parsedData);
             setMlist(parsedData.results)
         
-
+            setProgress(100)
         } catch (error) {
               alert("Some internal error, please press ok to continue ");
-            ReactDOM.render(<Movie />, document.getElementById('root'));
+            ReactDOM.render(<Movie  mode ={props.mode}/>, document.getElementById('root'));
 
         }
 
@@ -92,7 +97,12 @@ export const Movie = (props) => {
 
     
 
-    return (
+    return (<>
+        <LoadingBar
+        height={3}
+        color='#f11946'
+        progress={progress}
+      />
         <div id='cards' className='movie'>
             <nav className={`navbar m-0 navbar-${forColor} bg-${forColor} fixed-top`} style={{ boxShadow: forShad }}>
                 <div className="">
@@ -112,7 +122,7 @@ export const Movie = (props) => {
                 <button id="ref2" className='btn btn-outline-danger' onClick={serachMovie}>Search-Movie</button>
             </div>
             <div className='in-box-1'>
-                <h1 className='my-movie-list'> Movie List</h1>
+                <h1 className='my-movie-list' s> Movie List</h1>
                 {mList.map((element) => {
                     return (
                         <div className="in-box-2">
@@ -148,7 +158,7 @@ export const Movie = (props) => {
             </div>
 
         </div>
-
+     </>
     )
 }
 
