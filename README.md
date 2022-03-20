@@ -1,3 +1,12 @@
+# Note:-  By Nishant Rajput
+If You don't see Theme toggle option on your window then refresh your entire settion or app you will see it 
+
+it's a kind of bug ); 
+i am trying to solve that
+
+# click on cards
+onclick on cards you will see complete discription about abot movie by flip animation
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -376,14 +376,14 @@ body {
 }
 
 
-
+ /*------------------------
+ media queries
+ ----------------------*/
 @media (max-width: 1100px) {
   .form-label {
     font-size: 2rem;
   }
 }
-
-@media (max-width: 800px) {}
 
 @media (max-width: 600px) {
   .inner-movie {
@@ -391,7 +391,6 @@ body {
   }
 
   .card-body {
-    font-size: .8rem !important;
     padding: 1rem .5rem 0rem .5rem;
   }
 
@@ -447,24 +446,13 @@ body {
     width: 55px;
     height: 28px;
   }
- .back .card-body {
-    font-size: .8rem !important;
+
+  .back .card-body {
     padding: 1rem 0rem 0rem 0.5rem;
-}
+  }
 }
 
 @media (max-width: 450px) {
-  .in-box-1 {
-    gap: 0.6rem;
-  }
-
-  .inner-movie {
-    width: 12rem;
-  }
-
-  .card-title {
-    font-size: .9rem;
-  }
 
   .form-label {
     font-size: 1rem;
@@ -472,7 +460,16 @@ body {
 
   .front,
   .back {
-    height: 23rem;
+    height: 29rem;
+  }
+
+  .inner-movie {
+    width: 17rem;
+    padding: 0.5rem !important;
+  }
+
+  .back .inner-movie {
+    padding: 0rem !important;
   }
 
   .mode {
