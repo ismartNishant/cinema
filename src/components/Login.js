@@ -77,7 +77,7 @@ const Login = (props) => {
         console.log(newToken + "from get token")
         return newToken
     }
-
+     
     let forbg = props.mode ? "#0000008a" : "#ffffff21";
     let forColor = props.mode ? "#000" : "#fff";
     let forShad = props.mode ? "0px 0px 10px #fff" : "0px 0px 10px #000";
@@ -106,7 +106,7 @@ const Login = (props) => {
     }
     else if (success) {
         return (
-            <Movie />
+            <Movie mode ={props.mode} />
         );
     }
 };

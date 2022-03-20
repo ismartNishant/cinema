@@ -8,6 +8,7 @@ import {
   Route,
 } from 'react-router-dom';
 
+
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
   document.body.style.backgroundColor =  darkMode ? "#000" : "#fff";
@@ -31,6 +32,7 @@ const App = () => {
                 </div>
         <Routes>
           <Route path="/" element={<Login mode ={darkMode} />} />
+           
         </Routes>
       </div>
     </Router>

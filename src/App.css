@@ -178,8 +178,10 @@ body {
 .search-btn button {
   text-align: center;
 }
-.inner-movie {
+.back .inner-movie{
   overflow-y: scroll !important;
+}
+.inner-movie {
   width: 17rem;
   padding: .5rem;
 }
@@ -330,10 +332,22 @@ body {
 }
 @media (max-width: 800px) {}
 @media (max-width: 600px) {
+  .inner-movie {
+    width: 15rem;
+}
+.card-body {
+  font-size: .8rem !important;
+  padding: 1rem .5rem 0rem .5rem;
+}
+.card-footer {
+  padding: 0.5rem 0.5rem;
+}
+.front, .back {
+  height: 25rem;
+}
   .movie-btn {
     padding: 0rem .5rem;
     position: fixed;
-    top: 90%;
   }
   .navbar {
     padding: .5rem 1rem;
