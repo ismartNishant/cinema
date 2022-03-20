@@ -36,6 +36,20 @@ body {
   min-height: 100vh;
 }
 
+::-webkit-scrollbar {
+  width: 0.8em;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background: transparent;
+  box-shadow: inset 0 0 10px transparent;
+}
+::-webkit-scrollbar-thumb {
+  width: 0.3em;
+  border-radius: 20px;
+  background-color: #afaeae;
+}
 .main-login {
   width: 25rem;
   margin: 2rem auto;
@@ -46,8 +60,8 @@ body {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.726);
 }
 .login {
-width: 100%;
-height: 100vh;
+  width: 100%;
+  height: 100vh;
   padding: 2rem 0rem;
 }
 .login-label {
@@ -75,8 +89,9 @@ height: 100vh;
   font-size: 1.1rem;
   border: none;
   border-radius: 5px;
-  border: 2px solid ;
+  border: 2px solid;
 }
+
 ::placeholder {
   color: #ffffff;
   font-size: 0.8em;
@@ -92,10 +107,12 @@ height: 100vh;
   font-weight: bold;
   outline: none;
 }
+
 .login .disabled {
   color: var(--third);
   background: #fff;
 }
+
 .login button {
   transition: 0.5s ease-in;
   border-radius: 20px;
@@ -105,158 +122,155 @@ height: 100vh;
   padding: 0.3rem 5rem;
   text-decoration: none;
   font-size: 1.8rem;
-  background:var(--third);
+  background: var(--third);
   color: #fff;
-  
+
 }
 
 .login button:hover {
-  background:#fff;
+  background: #fff;
   color: #000 !important;
 }
 
 
-/*---------movie section ----------------*/
+/*-----------------------------
+      movie section 
+-------------------------------*/
 #ref,
-#movie-btn{
+#movie-btn {
   visibility: hidden;
 }
-.main-search{
+.main-search {
   text-align: center !important;
   margin-top: 8rem;
   justify-content: center;
 }
-.main-search button{
+.main-search button {
   padding: 2rem 5rem;
   font-size: 2rem !important;
 }
-
-.movie-btn{
+.movie-btn {
   display: flex;
   margin: 0 auto;
   position: fixed;
   z-index: 1;
-  top:5rem;
+  top: 5rem;
   width: 100%;
   padding: 0rem 3rem;
   justify-content: space-between;
 }
-.movie-btn i{
+.movie-btn i {
   font-size: 2rem;
 }
-.navbar{
-padding: 0rem 5rem;
+.navbar {
+  padding: 0rem 5rem;
 }
-.navbar-brand{
+.navbar-brand {
   font-family: "Aladin";
-font-size: 3.5rem;
-color: var(--third) !important;
+  font-size: 3.5rem;
+  color: var(--third) !important;
 }
-.search-btn{
+.search-btn {
   padding: 5rem 0rem 2rem 0rem;
-text-align: center;
+  text-align: center;
   text-align: center;
 }
-.search-btn button{
+.search-btn button {
   text-align: center;
 }
-
-
-.inner-movie{
+.inner-movie {
+  overflow-y: scroll !important;
   width: 17rem;
   padding: .5rem;
-  border: 2px solid #000;
 }
-.in-box-1{
- padding: 8rem .5rem 1rem .5rem;
+.in-box-1 {
+  padding: 2rem .5rem 1rem .5rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
 }
-.card{
+.card {
   background-color: transparent;
 }
 .cards {
-    transition: transform 2s;
-    transform-style: preserve-3d;
-    cursor: pointer;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+  cursor: pointer;
 }
-.front, .back {
-  backface-visibility: hidden;
-}
-
+.front,
 .back {
-position: absolute;
-bottom: 0rem;
-transform: rotateY(180deg);
+  backface-visibility: hidden;
+  height: 30rem;
+}
+.back {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0rem;
+  transform: rotateY(180deg);
 }
 .card-title,
-.card-footer small span{
+.card-footer small span {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: bolder;
 }
-.card-text{
+.card-text {
   font-family: 'Nunito Sans', sans-serif;
-  
+
 }
 .card-title span,
-.card-footer small span{
+.card-footer small span {
   color: #d62c57;
 }
-.card-text span{
+.card-text span {
   font-weight: bolder;
   color: var(--third);
 }
-
-.inner-movie h4{
+.inner-movie h4 {
   font-weight: bold;
   font-family: 'Nunito', sans-serif;
 }
 
-/*-----------mode*/
+/*-----------------------------
+        mode
+--------------------------------*/
 
-  .mode {
-    position: fixed;
-    right: 0rem;
-    bottom: 5rem;
-    border: 1px solid #000;
-    border-radius: 27px;
-    z-index: 1;
+.mode {
+  position: fixed;
+  right: 0rem;
+  bottom: 5rem;
+  border: 1px solid #000;
+  border-radius: 27px;
+  z-index: 1;
 }
-
- .mode .container {
+.mode .container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 14px;
 }
-
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
 }
-
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-.theme i{
+.theme i {
   font-size: 2rem;
 }
 .slider {
@@ -270,7 +284,6 @@ transform: rotateY(180deg);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
 .slider:before {
   position: absolute;
   content: "";
@@ -282,70 +295,58 @@ transform: rotateY(180deg);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
-.switch input:checked + .slider {
+.switch input:checked+.slider {
   background-color: #19a2c1;
 }
- .switch input:focus + .slider {
+.switch input:focus+.slider {
   box-shadow: 0 0 1px #2196f3;
 }
-
-  .switch input:checked + .slider:before {
+.switch input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
-
 .slider.round:before {
   border-radius: 50%;
 }
 .switch-checkbox {
   padding: 5px;
 }
-
 /*-------------unauth ------------------*/
-.inner-auth{
- margin: 5rem auto;
+.inner-auth {
+  margin: 5rem auto;
 }
-.box-auth{
+.box-auth {
   text-align: center;
 }
 @media (max-width: 1100px) {
-
   .form-label {
     font-size: 2rem;
   }
-
 }
-
-@media (max-width: 800px) {
-  
-}
-
+@media (max-width: 800px) {}
 @media (max-width: 600px) {
   .movie-btn {
     padding: 0rem .5rem;
     position: fixed;
     top: 90%;
-}
-  .navbar{
+  }
+  .navbar {
     padding: .5rem 1rem;
-    }
-    .navbar-brand{
+  }
+  .navbar-brand {
     font-size: 2rem;
-    }
+  }
   .main-login {
     margin: 0;
     border-radius: 0rem;
     height: 100vh;
     width: 100%;
   }
-
   .form-label {
     font-size: 1.5rem;
   }
@@ -356,16 +357,15 @@ transform: rotateY(180deg);
     padding: 3px;
   }
   .slider:before {
-  
     height: 20px;
     width: 22px;
     left: 4px;
     bottom: 4px;
-}
-.switch {
-  width: 55px;
-  height: 28px;
-}
+  }
+  .switch {
+    width: 55px;
+    height: 28px;
+  }
 
 }
 
@@ -374,16 +374,18 @@ transform: rotateY(180deg);
   .form-label {
     font-size: 1rem;
   }
+
   .mode {
     right: 0rem;
     border: 1px solid #000;
-}
+  }
 
   .login .mybtn {
     margin: 40px auto;
     margin-top: 5rem !important;
-}
-form {
-  margin-top: 6rem;
-}
+  }
+
+  form {
+    margin-top: 6rem;
+  }
 }

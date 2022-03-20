@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { newToken } from './Login';
-import { Link } from "react-router-dom";
 import $ from 'jquery';
 import ReactDOM from 'react-dom';
 
@@ -10,9 +9,8 @@ export const Movie = (props) => {
     const [mList, setMlist] = useState([]);
     const [page, setPage] = useState(1);
 
-    var movielenght = undefined;
     
-
+  // function to fetch moovie list
     const serachMovie = async () => {
         var val = newToken;
         $("#ref2").hide();
@@ -30,7 +28,7 @@ export const Movie = (props) => {
             console.log(parsedData);
             setMlist(parsedData.results)
             console.log(mList)
-            movielenght = mList.length
+
             console.log(mList[3])
             console.log(val + "in movie ");
         } catch (error) {
@@ -40,6 +38,7 @@ export const Movie = (props) => {
         
     }
 
+    // function for next and previous movie list
     const updateMoviepage = async (pageType) => {
         var val = newToken;
         var pageNo;
@@ -64,7 +63,7 @@ export const Movie = (props) => {
 
             console.log(parsedData);
             setMlist(parsedData.results)
-            movielenght = mList.length
+        
 
         } catch (error) {
               alert("Some internal error, please press ok to continue ");
@@ -74,12 +73,11 @@ export const Movie = (props) => {
 
     }
 
-
+  //function for show to whole card information
     const flip = (event) => {
-        
         var element = event.currentTarget;
         if (element.className === "cards") {
-        if(element.style.transform == "rotateY(180deg)") {
+        if(element.style.transform === "rotateY(180deg)") {
           element.style.transform = "rotateY(0deg)";
         }
         else {
@@ -116,15 +114,14 @@ export const Movie = (props) => {
             <div className='in-box-1'>
                 {mList.map((element) => {
                     return (
-
                         <div className="in-box-2">
                             <div className="cards"   onClick={(e) => {flip(e); }}>
                                 <div className="front">
                                     <div className='inner-movie h-100 card p-0 m-0' key={element.uuid} style={{ borderColor: forbg, boxShadow: forShad, color: forbg }}>
-                                        <img src={`https://ui-avatars.com/api/?rounded=true&background=random&name=${element.title}`} alt='..' />
+                                        <img src={`https://ui-avatars.com/api/?rounded=true&background=caf0f8&color=666&name=${element.title}`} alt='..' />
                                         <div className="card-body">
                                             <h6 className="card-title bold"> <span className='danger'>Title:- </span> {element.title ? element.title.slice(0, 20) : ""}</h6>
-                                            <p className="card-text bold"> <span>Description:- </span>{element.description ? element.description.slice(0, 90) : ""} ...</p>
+                                            <p className="card-text bold"> <span>Description:- </span>{element.description ? element.description.slice(0, 80) : ""} ...</p>
                                         </div>
                                         <div className="card-footer">
                                             <small className=""> <span>Genres:- </span> {element.genres.length === 0 ? "NA" : element.genres}</small>
@@ -132,13 +129,13 @@ export const Movie = (props) => {
                                     </div>
                                 </div>
                                 <div className="back">
-                                    <div className='inner-movie h-100 card p-0 m-0' key={element.uuid} style={{ borderColor: forbg, boxShadow: forShad, color: forbg }}>
-                                        <img src={`https://ui-avatars.com/api/?background=random&name=${element.title}`} alt='..' />
-                                        <div className="card-body">
+                                    <div className='inner-movie h-100 card p-0 m-0' key={element.uuid} style={{ borderColor: forbg, boxShadow: forShad }}>
+                                        <img src={`https://ui-avatars.com/api/?background=d8f3dc&color=666&name=${element.title}`} alt='..' />
+                                        <div className="card-body" style={{color: forbg}}>
                                             <h6 className="card-title bold"> <span className='danger'>Title:- </span> {element.title ? element.title.slice(0, 20) : ""}</h6>
                                             <p className="card-text bold"> <span>Description:- </span>{element.description}</p>
                                         </div>
-                                        <div className="card-footer">
+                                        <div className="card-footer" style={{color: forbg}}>
                                             <small className=""> <span>Genres:- </span> {element.genres.length === 0 ? "NA" : element.genres}</small>
                                         </div>
                                     </div>

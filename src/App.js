@@ -1,8 +1,6 @@
 import './App.css';
 import React, {useState} from "react";
 import Login from './components/Login';
-import { Movie } from './components/Movie';
-import Unauth from './components/Unauth';
 
 import {
   BrowserRouter as Router,
@@ -12,7 +10,6 @@ import {
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
-   
   document.body.style.backgroundColor =  darkMode ? "#000" : "#fff";
 
 
@@ -34,8 +31,6 @@ const App = () => {
                 </div>
         <Routes>
           <Route path="/" element={<Login mode ={darkMode} />} />
-          <Route path="/movie"  element={<Movie mode ={darkMode} />} />
-         
         </Routes>
       </div>
     </Router>

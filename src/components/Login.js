@@ -1,18 +1,15 @@
-import React, { useState, createContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, createContext } from "react";
 import $ from 'jquery';
 import { Movie } from "./Movie";
-import Unauth from "./Unauth";
+
 
 var newToken = createContext();
 const Login = (props) => {
     const [name, setName] = useState("");
     const [pswd, setPswd] = useState("");
-    const [UAuth, setUAuth] = useState(false);
     const [success, setSucsess] = useState(false);
 
     const logBtnEnabled = () => {
-
         var a = $("#iName").val().length;
         var b = $("#iPass").val().length;
         if (a !== 0 && b !== 0) {
@@ -24,12 +21,13 @@ const Login = (props) => {
 
     }
 
-
+    //to store username
     const handleOnChange = (event) => {
         setName(event.target.value);
         logBtnEnabled();
 
     };
+    //to store password
     const handlePswd = (even) => {
         setPswd(even.target.value);
         logBtnEnabled();
@@ -39,6 +37,7 @@ const Login = (props) => {
 
     var tok;
 
+    //function for user authentication
     const handleLogin = (e) => {
         e.preventDefault();
         $("#logBtn").addClass("disabled");
@@ -72,7 +71,7 @@ const Login = (props) => {
 
     };
 
-
+  // to store auth token in local storage
     const getToken = () => {
         newToken = localStorage.getItem('token');
         console.log(newToken + "from get token")
